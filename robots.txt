@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /CNAME
+Disallow: /thank-you
+Disallow: /inner-page
+Disallow: /goodbye
