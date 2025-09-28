@@ -1753,3 +1753,75 @@ section {
 #footer .credits a {
   transition: 0.3s;
 }
+
+/* Floating tab button */
+    .floating-tab {
+      position: fixed;
+      top: 90px;
+      right: 0;
+      background: #FF4A17;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px 0 0 10px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 1000;
+    }
+
+    /* Sliding form container */
+    .form-container {
+      position: fixed;
+      top: 140px;
+      right: -400px; /* hidden by default */
+      width: 350px;
+      height: 40%;
+      background: #afafaf;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+      padding: 20px;
+      transition: right 0.3s ease-in-out;
+      z-index: 999;
+    }
+
+    .form-container.active {
+      right: 0;
+    }
+
+    .form-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* Style Mailchimp form */
+    #mc_embed_signup {
+      font-size: 14px;
+    }
+
+    #mc_embed_signup input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ccc000ff;
+      border-radius: 5px;
+    }
+
+    #mc_embed_signup input[type="submit"] {
+      width: 100%;
+      background: #FF4A17;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #mc_embed_signup input[type="submit"]:hover {
+      background: #005bb5;
+    }
