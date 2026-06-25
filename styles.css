@@ -101,7 +101,7 @@ a {
 
 .nav-menu a {
     font-weight: 500;
-    color: var(--white);
+    color: var(--dark);
     transition: var(--transition);
     position: relative;
 }
