@@ -1,375 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-W885MNX');</script>
-  <!-- End Google Tag Manager -->
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development & Digital Marketing Blog | Index Web Solution</title>
+    <meta name="description" content="Expert insights on WordPress, Shopify, SEO, email marketing, and web development. Get tips, tutorials, and strategies to grow your online business.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+        }
 
-  <title>Index Web Solution - We are team of talented designers making websites with Wordpress, Shopify</title>
-  <meta content="Digital agency Ambala, India - eCommerce, website design development and digital marketing services. Servicing B2B and B2C businesses across Australia, North America, Europe, South Africa, Israel, Saudi Arabia and PAN Asia." name="description">
-  <meta content="" name="keywords">
+        .blog-categories {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+        .category-btn {
+            padding: 10px 24px;
+            border: 2px solid var(--light-gray);
+            background: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        .category-btn:hover,
+        .category-btn.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: var(--white);
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="vendor/aos/aos.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
 
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
+        .blog-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition-slow);
+        }
 
-  <!-- =======================================================
-  * Template Name: Dewi
-  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card-image {
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            background: var(--light-gray);
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-card-content {
+            padding: 28px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: var(--medium-gray);
+        }
+
+        .blog-category-tag {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .blog-card-title {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .blog-card-excerpt {
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .blog-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .blog-card-link:hover {
+            gap: 12px;
+        }
+
+        .featured-post {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 60px;
+            border-radius: 20px;
+        }
+
+        .featured-image {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            width: fit-content;
+        }
+
+        .featured-title {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .featured-excerpt {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .featured-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            width: fit-content;
+            transition: var(--transition);
+        }
+
+        .featured-link:hover {
+            gap: 16px;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-post {
+                grid-template-columns: 1fr;
+                padding: 40px 24px;
+            }
+
+            .featured-title {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W885MNX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="index.html">IWS</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
-          <li class="dropdown"><a class="nav-link scrollto" href="services.html"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>              
-              <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="https://indexwebsolution.com/service-wordpress.html">WordPress</a></li>
-                  <li><a href="https://indexwebsolution.com/service-shopify.html">Shopify</a></li>
-                  <li><a href="#">Wix</a></li>
-                  <li><a href="#">SquareSpace</a></li>
-                  <li><a href="#">Thinkific</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Landing Pages</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="https://indexwebsolution.com/emotional-gifting-funnel.html">Custom Landing Page</a></li>
-                  <li><a href="#">Unbounce</a></li>
-                </ul>
-              </li>
-              <li><a href="https://indexwebsolution.com/services-web-development.html">Python Development</a></li>
-              <li><a href="https://indexwebsolution.com/services-email-marketing.html">Email Marketing Solution</a></li>
-              <li><a href="https://indexwebsolution.com/services-search-engine-optimization.html">SEO/SMM</a></li>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">Index Web Solution</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="tel:+917988618308" class="nav-cta">+91-79886-18308</a></li>
             </ul>
-          </li>
-          <li><a class="nav-link scrollto " href="portfolio.html">Portfolio</a></li>
-          <!--<li><a class="nav-link scrollto" href="team.html">Team</a></li>-->
-          <li><a class="nav-link scrollto active" href="blog.html">Blog</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
-          <li><a class="getstarted scrollto" href="https://wa.me/+917988618308">+91-79886-18308</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero-inner-page">
-    <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
-      <h1>Blog</h1>
-    </div>
-  </section><!-- End Hero -->
-  <main id="main">
-
-<!-- ======= Blog Section 8 March 2025======= -->
-  <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
-      <div class="row">
-
-        <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-          <img src="img/features-1.png" class="img-fluid" alt="How to Build Conversion-Focused Email Automation That Grows Your Online Store Sales">
         </div>
+    </nav>
 
-        <div class="col-lg-6 pt-3 pt-lg-0 content">
-          <h3>How to Build Conversion-Focused Email Automation That Grows Your Online Store Sales</h3>
-          <p class="fst-italic">
-              In the fast-paced world of eCommerce, it’s easy to get lost in the noise of ads, social media posts, and influencer campaigns. Yet, one marketing channel continues to outperform all others when it comes to ROI — email marketing. With smart email automation, you can build a system that nurtures leads, converts browsers into buyers, and keeps customers coming back without constant manual effort. 
-          </p>  
-          <p>
-              <a href="https://indexwebsolution.com/conversion-focused-email-automation.html" class="btn-get-started scrollto">read more ...</a>
-          </p>        
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- End Blog Section 8 march 2025 -->    
-
-  <!-- ======= Blog Section 8 March 2025======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-
-          <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-            <img src="img/law-office.webp" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-6 pt-3 pt-lg-0 content">
-            <h3>Building a Powerful WordPress Website for Your Law Office: A Case Study</h3>
-            <p class="fst-italic">
-              In today's digital age, a strong online presence is crucial for any business, including law offices. For Robert Maher Law, providing estate planning and immigration services, a well-structured and user-friendly website is essential for attracting and retaining clients. This blog post will delve into the specific tools and techniques used to build their WordPress website, focusing on the powerful combination of GeneratePress, GenerateBlocks, Forminator, GTranslate, and Site Kit by Google. 
-	    </p>
-
-	<h2>The Foundation: GeneratePress &amp; Child Theme</h2>
-	<p>We began by choosing GeneratePress as the core theme. GeneratePress is renowned for its lightweight code, speed, and customization options. Its clean structure provides a solid foundation for any website. To ensure future updates wouldn't override our custom modifications, we created a child theme. This allowed us to add custom CSS, functions, and templates without impacting the parent theme's integrity.</p>
-        
-	<h2>Building Dynamic Pages with GenerateBlocks</h2>
-	<p>For content creation, we leveraged GenerateBlocks. This plugin offers a suite of lightweight Gutenberg blocks that allow for advanced layout and design without the bloat of traditional page builders. We designed custom blocks for services pages, testimonials, and contact forms, ensuring a consistent and professional look across the site. The block-based approach allowed us to create visually appealing pages that were also fast-loading and responsive.</p>
-	
-	<h2>Seamless Forms with Forminator</h2>
-	<p>Client communication is paramount for a law office. We integrated Forminator, a powerful form builder plugin, to create contact forms, appointment requests, and consultation forms. Forminator's user-friendly interface made it easy to create custom forms with various field types and validation rules. This ensured a smooth and efficient way for potential clients to reach out.</p>
-        
-	<h2>Reaching a Global Audience with GTranslate</h2>
-	<p>Robert Maher Law serves a diverse clientele, including those seeking immigration services. To cater to this audience, we implemented GTranslate. This plugin automatically translates the website into multiple languages, making it accessible to a broader audience. It provided a seamless experience for non-English speaking visitors, enhancing the website's inclusivity.</p>
-		  
-	<h2>Optimizing for Search Engines with Site Kit by Google</h2>
-	<p>For SEO and analytics, we utilized Site Kit by Google. This plugin provides valuable insights into website traffic, search performance, and user behavior. It integrated Google Analytics, Search Console, and PageSpeed Insights directly into the WordPress dashboard. This allowed us to monitor the website's performance, identify areas for improvement, and optimize for search engines.</p>
-
-	<h2>Key Benefits of this Tech Stack:</h2>
-	<!-- <p>Speed and Performance:</p> -->
-		  
-	    <ul>
-              <li><i class="bx bx-check-double"></i> Speed and Performance: GeneratePress and GenerateBlocks ensured a fast-loading website, crucial for user experience and SEO.</li>
-              <li><i class="bx bx-check-double"></i> Customization and Flexibility: The child theme and GenerateBlocks allowed for extensive customization without sacrificing performance.</li>
-              <li><i class="bx bx-check-double"></i> User-Friendly Forms: Forminator provided a seamless way for clients to contact the law office.</li>
-	      <li><i class="bx bx-check-double"></i> Global Accessibility: GTranslate made the website accessible to a wider audience.</li>
-	      <li><i class="bx bx-check-double"></i> Data-Driven Optimization: Site Kit by Google provided valuable insights for SEO and performance optimization.</li>
-            </ul>
-
-	<h2>Conclusion:</h2>
-	<p>Building a successful website for a law office requires careful planning and the right tools. By utilizing GeneratePress, GenerateBlocks, Forminator, GTranslate, and Site Kit by Google, we created a powerful and user-friendly website for Robert Maher Law. This combination of tools provided a solid foundation for their online presence, allowing them to effectively reach and serve their clients.</p>
-
-<h2>If you are looking to build a WordPress website for your law office, consider this tech stack. It's a proven and effective way to create a professional and high-performing website.</h2>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Blog Section 8 march 2025 -->
-
-
-	  <!-- ======= Blog Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-
-          <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-            <img src="img/blog1.jpg" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-6 pt-3 pt-lg-0 content">
-            <h3>How to Build a Website with WordPress: A Step-by-Step Guide</h3>
-            <p class="fst-italic">
-              Building a website might sound intimidating, but with WordPress, it’s easier than ever—even if you’re a complete beginner. WordPress powers over 40% of websites globally, from blogs to e-commerce stores, thanks to its flexibility and user-friendly interface. In this guide, we’ll walk you through the process of creating your own WordPress website, step by step. Plus, stick around for a handy infographic to visualize the journey!
-            </p>
-
-	<h2>Step 1: Define Your Website’s Purpose</h2>
-	<p>Before diving in, ask yourself: What’s the goal of your website? Are you starting a blog, launching an online store, or showcasing a portfolio? Knowing your purpose will guide your design and content choices. For example, a blog might prioritize readability, while a store needs a strong product display.</p>
-        <h2>Step 2: Get a Domain Name and Hosting</h2>
-	<p>Your domain name <span style="color:blue;">(e.g., www.yourwebsite.com)</span> is your online address, and hosting is where your website lives. Choose a domain that’s catchy and relevant to your brand. Then, pick a reliable hosting provider like Bluehost, SiteGround, or WP Engine—many offer one-click WordPress installation to save time.</p>
-	<h2>Step 3: Install WordPress</h2>
-	<p>Once you’ve secured hosting, log into your provider’s control panel and find the WordPress installation option. With a single click, WordPress will be set up on your domain. After installation, you’ll get a login URL (usually yourdomain.com/wp-admin) to access your dashboard.</p>
-        <h2>Step 4: Choose a Theme</h2>
-	<p>The WordPress dashboard is your control center. Head to “Appearance > Themes” to pick a design. Free options like Astra or OceanWP are great for beginners, while premium themes like Divi offer more customization. Select a theme that matches your site’s purpose and tweak it to reflect your style.</p>
-	<h2>Step 5: Customize Your Site</h2>
-<p>Make your website your own! Adjust colors, fonts, and layouts under the “Customize” menu. Add a logo or header image to boost branding. Don’t worry—WordPress’s drag-and-drop editors make this part fun and stress-free.</p>
-
-<h2>Step 6: Add Essential Plugins</h2>
-<p>Plugins are like apps for your website, adding features with a click. Start with these must-haves:</p>
-		  
-	    <ul>
-              <li><i class="bx bx-check-double"></i> Yoast SEO: Optimize your site for search engines.</li>
-              <li><i class="bx bx-check-double"></i> WooCommerce: Turn your site into a store (if needed).</li>
-              <li><i class="bx bx-check-double"></i> Contact Form 7: Add a simple contact form. Install them via “Plugins > Add New” and activate them.</li>
-            </ul>
-
-		<h2>Step 5: Customize Your Site</h2>
-<p>Make your website your own! Adjust colors, fonts, and layouts under the “Customize” menu. Add a logo or header image to boost branding. Don’t worry—WordPress’s drag-and-drop editors make this part fun and stress-free.</p>
-
-<h2>Step 7: Create Key Pages</h2>
-<p>Every website needs a few core pages. Go to “Pages > Add New” and craft:</p>
-		  
-	    <ul>
-              <li><i class="bx bx-check-double"></i> Home: A welcoming landing page.</li>
-              <li><i class="bx bx-check-double"></i> About: Your story or mission.</li>
-              <li><i class="bx bx-check-double"></i> Contact: A way for visitors to reach you. Link these pages to your menu under “Appearance > Menus” for easy navigation.</li>
-            </ul>
-
-<h2>Why WordPress?</h2>
-<p>WordPress isn’t just easy—it’s scalable. As your site grows, you can add features like email subscriptions, analytics, or even a membership area. Plus, its massive community means you’ll never run out of tutorials or support.</p>
-<p>Ready to start? Building your website is a creative adventure waiting to happen. If you found this guide helpful, why not explore more tips or share your progress with us? We’d love to see what you create!</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Blog Section -->
-
-   <!-- ======= Blog Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-
-          <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-            <img src="img/blog1.jpg" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-6 pt-3 pt-lg-0 content">
-            <h3>Benefits of building website in WordPress as compared to other CMS</h3>
-            <p class="fst-italic">
-              Since 2001, wordpress is top choice for building websites.
-            </p>
-            <ul>
-              <li><i class="bx bx-check-double"></i> Digital Strategy: ...........................</li>
-              <li><i class="bx bx-check-double"></i> Award-Winning Websites & eCommerce: ............................</li>
-              <li><i class="bx bx-check-double"></i> High-Performance Digital Marketing: ............................</li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Blog Section -->
-
-  </main>
-  <!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>IWS</h3>
-              <p>
-                #490-491 Housing Board <br>
-                Ambala Cantt 133001, IN<br><br>
-                <strong>Phone:</strong> +91 79886 18308<br>
-                <strong>Email:</strong> contact@indexwebsolution.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="https://twitter.com/KamalKi20991503" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="https://www.facebook.com/Index-web-solution-104899815536339" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="https://img.youtube.com/vi/2PUryJGjNfo/hqdefault.jpg" class="youtube"><i class="bx bxl-youtube"></i></a>
-                <a href="https://img.youtube.com/vi/2PUryJGjNfo/hqdefault.jpg" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="https://www.linkedin.com/in/index-web-solution-10b10b238/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Latest Insights</span>
+                <h1 class="section-title">Blog</h1>
+                <p class="section-description">
+                    Expert tips, tutorials, and insights on web development, SEO, digital marketing, 
+                    and growing your online business.
+                </p>
             </div>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="terms-of-services.html">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="privacy-policy.html">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="services-web-design.html">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services-web-development.html">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services-product-management.html">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services-email-marketing.html">Email Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services-search-engine-optimization.html">Search Engine Optimization</a></li>
-	      <li><i class="bx bx-chevron-right"></i> <a href="services-conversion-strategies.html">Conversion Strategies</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Subscribe to Our Newsletter for Services & Offers Just for You</p>
-            <form action="https://indexwebsolution.us1.list-manage.com/subscribe/post?u=c65fcfdff2e35a9e01f13f9dd&amp;id=b94b1575a3&amp;f_id=009387e5f0" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
         </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>IndexWebSolution</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+    <!-- Blog Categories -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-categories">
+                <button class="category-btn" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="wordpress">WordPress</button>
+                <button class="category-btn" data-category="shopify">Shopify</button>
+                <button class="category-btn" data-category="seo">SEO</button>
+                <button class="category-btn" data-category="email-marketing">Email Marketing</button>
+                <button class="category-btn active" data-category="tools">Tools & Resources</button>
+            </div>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <!-- Featured Post -->
+                <article class="featured-post">
+                    <div class="featured-image">
+                        <img src="https://indexwebsolution.com/img/blog-images/how-to-learn-ai-and-become-an-ai-expert.jpg" alt="How to Learn AI and Become an AI Expert: A Complete Guide to Earning on Upwork and Freelance Platforms in 2026">
+                    </div>
+                    <div class="featured-content">
+                        <span class="featured-badge">Featured</span>
+                        <h2 class="featured-title">How to Learn AI and Become an AI Expert: A Complete Guide to Earning on Upwork and Freelance Platforms in 2026</h2>
+                        <p class="featured-excerpt">
+                            The fastest route to earning on Upwork is not by building AI models from scratch, but by becoming an AI Engineer/Automation Expert who builds products and workflows using existing AI APIs and tools. Upwork/Guru/Fiverr clients are actively seeking freelancers who can implement AI into their existing businesses.
+                        </p>
+                        <a href="blog-posts/blog-post-how-to-learn-ai-and-become-an-ai-expert.html" class="featured-link">
+                            Read Full Article →
+                        </a>
+                    </div>
+                </article>
 
-  <!-- Vendor JS Files -->
-  <script src="vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="vendor/aos/aos.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
+                <!-- Blog Post 1 -->
+                <article class="blog-card" data-category="shopify">
+                    <div class="blog-card-image">
+                        <img src="img/blog-images/15-Essential-WordPress-Plugins-Every-Website-Needs-in-2026.jpg" alt="Best WordPress Plugins for 2026">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag">WordPress</span>
+                            <span>•</span>
+                            <span>Mar 25, 2026</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">15 Essential WordPress Plugins Every Website Needs in 2026</h3>
+                        <p class="featured-excerpt">
+                            Discover the must-have WordPress plugins that will boost your site's performance, 
+                            security, SEO, and user experience. Complete guide with setup instructions.
+                        </p>
+                        <a href="blog-posts/blog-post-wordpress-plugins.html" class="featured-link">
+                            Read Full Article →
+                        </a>
+                    </div>
+                </article>
 
-  <!-- Template Main JS File -->
-  <script src="js/main.js"></script>
+                <!-- Blog Post 2 -->
+                <article class="blog-card" data-category="shopify">
+                    <div class="blog-card-image">
+                        <img src="img/blog-images/Complete-Shopify-SEO-Guide-Rank-Higher-Get-More-Sales.jpg" alt="Shopify SEO Guide">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag">Shopify</span>
+                            <span>•</span>
+                            <span>Feb 5, 2026</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">Complete Shopify SEO Guide: Rank Higher & Get More Sales</h3>
+                        <p class="blog-card-excerpt">
+                            Learn how to optimize your Shopify store for search engines with this comprehensive guide. 
+                            Includes product optimization, technical SEO, and link building strategies.
+                        </p>
+                        <a href="blog-posts/blog-post-complete-shopify-seo-guide.html" class="blog-card-link">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
 
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68e50134edc04d1951a957f5/1j6v8pdgg';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+                <!-- Blog Post 2 -->
+                <article class="blog-card" data-category="email-marketing">
+                    <div class="blog-card-image">
+                        <img src="img/blog-images/Email-Marketing-Automation-Set-Up-Your-First-Customer-Journey.jpg" alt="Email Marketing Automation">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag">Email Marketing</span>
+                            <span>•</span>
+                            <span>Feb 3, 2026</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">Email Marketing Automation: Set Up Your First Customer Journey</h3>
+                        <p class="blog-card-excerpt">
+                            Step-by-step guide to creating automated email sequences that convert subscribers into customers. 
+                            Includes Mailchimp setup and best practices.
+                        </p>
+                        <a href="blog-posts/blog-post-email-marketing-automation.html" class="blog-card-link">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
 
+                <!-- Blog Post 3 -->
+                <article class="blog-card" data-category="seo">
+                    <div class="blog-card-image">
+                        <img src="img/blog-images/Local-SEO-Checklist-Get-More-Customers-from-Google-My-Business.jpg" alt="Local SEO Tips">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag">SEO</span>
+                            <span>•</span>
+                            <span>Feb 1, 2026</span>
+                            <span>•</span>
+                            <span>12 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">Local SEO Checklist: Get More Customers from Google My Business</h3>
+                        <p class="blog-card-excerpt">
+                            Dominate local search results with this complete guide to Google My Business optimization, 
+                            local citations, and review management strategies.
+                        </p>
+                        <a href="blog-posts/blog-post-local-seo-checklist.html" class="blog-card-link">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card" data-category="wordpress">
+                    <div class="blog-card-image">
+                        <img src="img/blog-images/WordPress-Speed-Optimization-Make-Your-Site-Load-in-Under-2-Seconds.jpg" alt="WordPress Speed Optimization">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag">WordPress</span>
+                            <span>•</span>
+                            <span>Jan 28, 2026</span>
+                            <span>•</span>
+                            <span>15 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">WordPress Speed Optimization: Make Your Site Load in Under 2 Seconds</h3>
+                        <p class="blog-card-excerpt">
+                            Detailed guide to speeding up your WordPress site. Covers caching, image optimization, 
+                            database cleanup, and choosing the right hosting.
+                        </p>
+                        <a href="blog-posts/blog-post-wordpress-speed-optimization.html" class="blog-card-link">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card" data-category="tools">
+                    <div class="blog-card-image">
+                        <img src="img/blog-images/10-Best-SEO-Tools-for-Small-Businesses.jpg" alt="Best SEO Tools">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag">Tools</span>
+                            <span>•</span>
+                            <span>Jan 25, 2026</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">10 Best SEO Tools for Small Businesses (Free & Paid Options)</h3>
+                        <p class="blog-card-excerpt">
+                            Comprehensive review of the best SEO tools for keyword research, rank tracking, 
+                            backlink analysis, and technical audits. Includes pricing and recommendations.
+                        </p>
+                        <a href="blog-posts/blog-post-10-best-seo-tools-for-small-businesses.html" class="blog-card-link">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card" data-category="shopify">
+                    <div class="blog-card-image">
+                        <img src="img/blog-images/Top-12-Shopify-Apps-to-Increase-Conversions-and-Sales.jpg" alt="Shopify Apps">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag">Shopify</span>
+                            <span>•</span>
+                            <span>Jan 22, 2026</span>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">Top 12 Shopify Apps to Increase Conversions and Sales</h3>
+                        <p class="blog-card-excerpt">
+                            Must-have Shopify apps for improving conversion rates, abandoned cart recovery, 
+                            upselling, reviews, and customer loyalty. With installation guides.
+                        </p>
+                        <a href="blog-posts/blog-post-top-12-shopify-apps-to-increase-conversions-and-sales.html" class="blog-card-link">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Get Weekly Web Development Tips</h2>
+                <p class="cta-description">
+                    Join 5,000+ business owners and developers getting actionable tips on WordPress, 
+                    SEO, email marketing, and growing their online presence.
+                </p>
+                <form class="footer-newsletter" style="max-width: 500px; margin: 0 auto;">
+                    <input type="email" placeholder="Enter your email address" required style="padding: 16px 20px; font-size: 16px;">
+                    <button type="submit" class="btn btn-primary" style="margin-top: 16px;">Subscribe to Newsletter</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Index Web Solution</h3>
+                    <p class="footer-description">
+                        Expert web development, SEO, and digital marketing services 
+                        helping businesses succeed online since 2019.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Popular Posts</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog-post-wordpress-plugins.html">WordPress Plugins Guide</a></li>
+                        <li><a href="blog-post-shopify-seo.html">Shopify SEO Guide</a></li>
+                        <li><a href="blog-post-email-automation.html">Email Automation</a></li>
+                        <li><a href="blog-post-local-seo.html">Local SEO Checklist</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">WordPress Tips</a></li>
+                        <li><a href="blog.html">Shopify Guides</a></li>
+                        <li><a href="blog.html">SEO Strategies</a></li>
+                        <li><a href="blog.html">Email Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-description">
+                        #490-491 Housing Board<br>
+                        Ambala Cantt, IN 133001<br>
+                        <a href="tel:+917988618308">+91 79886 18308</a><br>
+                        <a href="mailto:contact@indexwebsolution.com">contact@indexwebsolution.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Index Web Solution. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-services.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Blog category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>
