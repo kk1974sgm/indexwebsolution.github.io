@@ -1,788 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Portfolio - Web Design & Development Projects | Index Web Solution</title>
-    <meta name="description" content="Browse our portfolio of successful WordPress, Shopify, and custom web development projects. See real results from our web design, SEO, and digital marketing work.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Portfolio-specific styles */
-        .portfolio-hero {
-            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
-            padding: 140px 0 80px;
-            text-align: center;
-        }
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W885MNX');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 60px;
-        }
+  <title>Portfolio - Website WordPress, Shopify, Landing page, SEO, SMO, and Mailchimp email templates</title>
+  <meta content="Showcase our expertise in WordPress, Shopify, Landing Pages, SEO, SMO & Email Marketing. See our portfolio!" name="description">
+  <meta content="wordpress, shopify, mailchimp" name="keywords">
 
-        .filter-btn {
-            padding: 12px 28px;
-            border: 2px solid var(--light-gray);
-            background: var(--white);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            color: var(--dark);
-            cursor: pointer;
-            transition: var(--transition);
-        }
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        .filter-btn:hover,
-        .filter-btn.active {
-            border-color: var(--primary);
-            background: var(--primary);
-            color: var(--white);
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-        .portfolio-full-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
+  <!-- Vendor CSS Files -->
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-        .portfolio-full-item {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: var(--transition-slow);
-        }
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
 
-        .portfolio-full-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .portfolio-full-image {
-            aspect-ratio: 16/10;
-            overflow: hidden;
-            background: var(--light-gray);
-            position: relative;
-        }
-
-        .portfolio-full-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-slow);
-        }
-
-        .portfolio-full-item:hover .portfolio-full-image img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 24px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-full-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .overlay-link {
-            color: var(--white);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .portfolio-full-content {
-            padding: 28px;
-        }
-
-        .portfolio-full-meta {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .portfolio-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(26, 84, 144, 0.1);
-            color: var(--primary);
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .portfolio-full-title {
-            font-family: var(--font-display);
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--dark);
-        }
-
-        .portfolio-full-description {
-            color: var(--medium-gray);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .portfolio-full-features {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .feature-badge {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            color: var(--medium-gray);
-        }
-
-        .feature-icon {
-            width: 16px;
-            height: 16px;
-            color: var(--success);
-        }
-
-        .portfolio-full-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .portfolio-full-link:hover {
-            gap: 12px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Image placeholder for missing images */
-        .portfolio-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 48px;
-            font-weight: 700;
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-full-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .portfolio-filters {
-                gap: 12px;
-            }
-            
-            .filter-btn {
-                padding: 10px 20px;
-                font-size: 13px;
-            }
-        }
-    </style>
+  <!-- =======================================================
+  * Template Name: Dewi
+  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="navbar">
-        <div class="container nav-container">
-            <a href="/" class="logo">
-                <span class="logo-text">Index Web Solution</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#testimonials">Testimonials</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="tel:+917988618308" class="nav-cta">+91-79886-18308</a></li>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W885MNX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">IWS</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="about.html">About</a></li>
+          <li class="dropdown"><a class="nav-link scrollto" href="services.html"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>              
+              <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="https://indexwebsolution.com/service-wordpress.html">WordPress</a></li>
+                  <li><a href="https://indexwebsolution.com/service-shopify.html">Shopify</a></li>
+                  <li><a href="#">Wix</a></li>
+                  <li><a href="#">SquareSpace</a></li>
+                  <li><a href="#">Thinkific</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Landing Pages</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="https://indexwebsolution.com/emotional-gifting-funnel.html">Custom Landing Page</a></li>
+                  <li><a href="#">Unbounce</a></li>
+                </ul>
+              </li>
+              <li><a href="https://indexwebsolution.com/services-web-development.html">Python Development</a></li>
+              <li><a href="https://indexwebsolution.com/services-email-marketing.html">Email Marketing Solution</a></li>
+              <li><a href="https://indexwebsolution.com/services-search-engine-optimization.html">SEO/SMM</a></li>
             </ul>
+          </li>
+          <li><a class="nav-link scrollto active" href="portfolio.html">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="blog.html">Blog</a></li>
+          <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
+          <li><a class="getstarted scrollto" href="https://wa.me/+917988618308">+91-79886-18308</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero-inner-page">
+    <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+      <h1>Portfolio</h1>
+      <div class="d-flex">
+        &nbsp;&nbsp;
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Check our Portfolio</p>
         </div>
-    </nav>
 
-    <!-- Portfolio Hero -->
-    <section class="portfolio-hero">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Work</span>
-                <h1 class="section-title">Portfolio</h1>
-                <p class="section-description">
-                    Explore our successful projects across industries. From e-commerce stores to service websites, 
-                    each project showcases our commitment to quality, performance, and results.
-                </p>
-            </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-travel">Travel</li>
+              <li data-filter=".filter-jewellery">Jewellery</li>
+              <li data-filter=".filter-beauty">Beauty</li>
+              <li data-filter=".filter-fashion">Fashion</li>
+              <li data-filter=".filter-cleaning">Cleaning</li>
+              <li data-filter=".filter-education">Education</li>
+              <li data-filter=".filter-business">Business</li>            
+              <li data-filter=".filter-finance">Finance</li>
+              <li data-filter=".filter-medical">Medical</li>
+              <li data-filter=".filter-legal">Legal</li>
+              <li data-filter=".filter-construction">Construction</li>
+            </ul>
+          </div>
         </div>
-    </section>
 
-    <!-- Portfolio Filters -->
-    <section class="portfolio-section">
-        <div class="container">
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-                <button class="filter-btn" data-filter="services">Services</button>
-                <button class="filter-btn" data-filter="beauty">Beauty & Wellness</button>
-                <button class="filter-btn" data-filter="travel">Travel & Hospitality</button>
-                <button class="filter-btn" data-filter="education">Education</button>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-travel">
+            <img src="img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Airtree Resort</h4>
+              <p>https://airtreeresort.com.au/</p>
+              <a href="img/portfolio/airtreeresort.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="WordPress"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details-airtreeresort.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
+          </div>
 
-            <!-- Portfolio Grid -->
-            <div class="portfolio-full-grid">
-                <!-- Project 1: Airtree Resort -->
-                <div class="portfolio-full-item" data-category="travel">
-                    <div class="portfolio-full-image">
-                        <img src="https://via.placeholder.com/800x500/1a5490/ffffff?text=Airtree+Resort" 
-                             alt="Airtree Resort Website" 
-                             onerror="this.src='https://via.placeholder.com/800x500/1a5490/ffffff?text=Airtree+Resort'">
-                        <div class="portfolio-overlay">
-                            <a href="https://airtreeresort.com.au/" target="_blank" class="overlay-link">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-full-content">
-                        <div class="portfolio-full-meta">
-                            <span class="portfolio-tag">Travel</span>
-                            <span class="portfolio-tag">WordPress</span>
-                        </div>
-                        <h3 class="portfolio-full-title">Airtree Resort</h3>
-                        <p class="portfolio-full-description">
-                            Luxury resort website with integrated booking system, image galleries, and mobile-responsive design. 
-                            Showcases resort amenities, rooms, and location with stunning visuals.
-                        </p>
-                        <div class="portfolio-full-features">
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Booking Integration
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Mobile Optimized
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                SEO Optimized
-                            </span>
-                        </div>
-                        <a href="https://airtreeresort.com.au/" target="_blank" class="portfolio-full-link">
-                            View Live Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2: Deltora Diamonds -->
-                <div class="portfolio-full-item" data-category="ecommerce">
-                    <div class="portfolio-full-image">
-                        <img src="https://via.placeholder.com/800x500/2c6bb3/ffffff?text=Deltora+Diamonds" 
-                             alt="Deltora Diamonds E-commerce"
-                             onerror="this.src='https://via.placeholder.com/800x500/2c6bb3/ffffff?text=Deltora+Diamonds'">
-                        <div class="portfolio-overlay">
-                            <a href="https://deltoradiamonds.com/" target="_blank" class="overlay-link">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-full-content">
-                        <div class="portfolio-full-meta">
-                            <span class="portfolio-tag">E-commerce</span>
-                            <span class="portfolio-tag">Shopify</span>
-                        </div>
-                        <h3 class="portfolio-full-title">Deltora Diamonds</h3>
-                        <p class="portfolio-full-description">
-                            Premium lab-grown diamond jewelry e-commerce store with custom product filters, 
-                            secure checkout, and elegant product showcases. Built for conversions and user experience.
-                        </p>
-                        <div class="portfolio-full-features">
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Product Filtering
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Payment Gateway
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Inventory Management
-                            </span>
-                        </div>
-                        <a href="https://deltoradiamonds.com/" target="_blank" class="portfolio-full-link">
-                            View Live Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3: Hair Folli -->
-                <div class="portfolio-full-item" data-category="beauty ecommerce">
-                    <div class="portfolio-full-image">
-                        <img src="https://via.placeholder.com/800x500/ff6b35/ffffff?text=Hair+Folli" 
-                             alt="Hair Folli E-commerce Website"
-                             onerror="this.src='https://via.placeholder.com/800x500/ff6b35/ffffff?text=Hair+Folli'">
-                        <div class="portfolio-overlay">
-                            <a href="https://hairfolli.com/" target="_blank" class="overlay-link">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-full-content">
-                        <div class="portfolio-full-meta">
-                            <span class="portfolio-tag">Beauty</span>
-                            <span class="portfolio-tag">E-commerce</span>
-                        </div>
-                        <h3 class="portfolio-full-title">Hair Folli</h3>
-                        <p class="portfolio-full-description">
-                            Natural hair growth products e-commerce site with educational content, product reviews, 
-                            and subscription options. Focused on building trust and converting health-conscious customers.
-                        </p>
-                        <div class="portfolio-full-features">
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Subscription System
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Blog Integration
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Email Marketing
-                            </span>
-                        </div>
-                        <a href="https://hairfolli.com/" target="_blank" class="portfolio-full-link">
-                            View Live Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Himalayan Naari -->
-                <div class="portfolio-full-item" data-category="ecommerce beauty">
-                    <div class="portfolio-full-image">
-                        <img src="https://via.placeholder.com/800x500/ffd23f/333333?text=Himalayan+Naari" 
-                             alt="Himalayan Naari Store"
-                             onerror="this.src='https://via.placeholder.com/800x500/ffd23f/333333?text=Himalayan+Naari'">
-                        <div class="portfolio-overlay">
-                            <a href="https://himalayan-naari.com/" target="_blank" class="overlay-link">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-full-content">
-                        <div class="portfolio-full-meta">
-                            <span class="portfolio-tag">Fashion</span>
-                            <span class="portfolio-tag">Shopify</span>
-                        </div>
-                        <h3 class="portfolio-full-title">Himalayan Naari Store</h3>
-                        <p class="portfolio-full-description">
-                            Traditional fashion e-commerce platform featuring handcrafted products, 
-                            cultural storytelling, and seamless shopping experience for ethnic wear enthusiasts.
-                        </p>
-                        <div class="portfolio-full-features">
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Multi-Currency
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Size Guides
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Product Reviews
-                            </span>
-                        </div>
-                        <a href="https://himalayan-naari.com/" target="_blank" class="portfolio-full-link">
-                            View Live Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 5: Brighters Cleaning -->
-                <div class="portfolio-full-item" data-category="services">
-                    <div class="portfolio-full-image">
-                        <img src="https://via.placeholder.com/800x500/2ecc71/ffffff?text=Brighters+Cleaning" 
-                             alt="Brighters Cleaning Services"
-                             onerror="this.src='https://via.placeholder.com/800x500/2ecc71/ffffff?text=Brighters+Cleaning'">
-                        <div class="portfolio-overlay">
-                            <a href="https://brighterscleaning.com/" target="_blank" class="overlay-link">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-full-content">
-                        <div class="portfolio-full-meta">
-                            <span class="portfolio-tag">Services</span>
-                            <span class="portfolio-tag">WordPress</span>
-                        </div>
-                        <h3 class="portfolio-full-title">Brighters Cleaning</h3>
-                        <p class="portfolio-full-description">
-                            Professional cleaning services website with online booking, service area maps, 
-                            and customer testimonials. Designed to generate leads and showcase service quality.
-                        </p>
-                        <div class="portfolio-full-features">
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Online Booking
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Quote Calculator
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Local SEO
-                            </span>
-                        </div>
-                        <a href="https://brighterscleaning.com/" target="_blank" class="portfolio-full-link">
-                            View Live Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 6: Angel Cleaning -->
-                <div class="portfolio-full-item" data-category="services">
-                    <div class="portfolio-full-image">
-                        <img src="https://via.placeholder.com/800x500/3498db/ffffff?text=Angel+Cleaning" 
-                             alt="Angel Cleaning NZ"
-                             onerror="this.src='https://via.placeholder.com/800x500/3498db/ffffff?text=Angel+Cleaning'">
-                        <div class="portfolio-overlay">
-                            <a href="https://angelcleaning.co.nz/" target="_blank" class="overlay-link">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-full-content">
-                        <div class="portfolio-full-meta">
-                            <span class="portfolio-tag">Services</span>
-                            <span class="portfolio-tag">WordPress</span>
-                        </div>
-                        <h3 class="portfolio-full-title">Angel Cleaning NZ</h3>
-                        <p class="portfolio-full-description">
-                            Commercial cleaning company website for Auckland and North Shore with service packages, 
-                            instant quotes, and lead generation forms optimized for B2B clients.
-                        </p>
-                        <div class="portfolio-full-features">
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                B2B Focused
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Quote Forms
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Service Areas
-                            </span>
-                        </div>
-                        <a href="https://angelcleaning.co.nz/" target="_blank" class="portfolio-full-link">
-                            View Live Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 7: World Class Tuition -->
-                <div class="portfolio-full-item" data-category="education services">
-                    <div class="portfolio-full-image">
-                        <img src="https://via.placeholder.com/800x500/9b59b6/ffffff?text=World+Class+Tuition" 
-                             alt="World Class Tuition"
-                             onerror="this.src='https://via.placeholder.com/800x500/9b59b6/ffffff?text=World+Class+Tuition'">
-                        <div class="portfolio-overlay">
-                            <a href="https://worldclasstuition.com/" target="_blank" class="overlay-link">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-full-content">
-                        <div class="portfolio-full-meta">
-                            <span class="portfolio-tag">Education</span>
-                            <span class="portfolio-tag">WordPress</span>
-                        </div>
-                        <h3 class="portfolio-full-title">World Class Tuition</h3>
-                        <p class="portfolio-full-description">
-                            Global education consultancy and tutoring platform with course catalogs, 
-                            tutor profiles, scheduling system, and student resources for international education.
-                        </p>
-                        <div class="portfolio-full-features">
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Course Catalog
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Booking System
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Student Portal
-                            </span>
-                        </div>
-                        <a href="https://worldclasstuition.com/" target="_blank" class="portfolio-full-link">
-                            View Live Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 8: Legacy Clinic -->
-                <div class="portfolio-full-item" data-category="services">
-                    <div class="portfolio-full-image">
-                        <img src="https://via.placeholder.com/800x500/e74c3c/ffffff?text=Legacy+Clinic" 
-                             alt="Legacy Clinic of Chiropractic"
-                             onerror="this.src='https://via.placeholder.com/800x500/e74c3c/ffffff?text=Legacy+Clinic'">
-                        <div class="portfolio-overlay">
-                            <a href="https://legacyclinicofchiropractic.com/" target="_blank" class="overlay-link">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-full-content">
-                        <div class="portfolio-full-meta">
-                            <span class="portfolio-tag">Healthcare</span>
-                            <span class="portfolio-tag">WordPress</span>
-                        </div>
-                        <h3 class="portfolio-full-title">Legacy Clinic of Chiropractic</h3>
-                        <p class="portfolio-full-description">
-                            Professional chiropractic clinic website with appointment scheduling, service descriptions, 
-                            patient education resources, and integrated social media management.
-                        </p>
-                        <div class="portfolio-full-features">
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Appointments
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Patient Resources
-                            </span>
-                            <span class="feature-badge">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                                Social Integration
-                            </span>
-                        </div>
-                        <a href="https://legacyclinicofchiropractic.com/" target="_blank" class="portfolio-full-link">
-                            View Live Site →
-                        </a>
-                    </div>
-                </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-jewellery">
+            <img src="img/portfolio/deltoradiamonds.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Lab Grown Diamond Jewellery</h4>
+              <p>https://deltoradiamonds.com/</p>
+              <a href="img/portfolio/deltoradiamonds.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="https://deltoradiamonds.com" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-beauty">
+            <img src="img/portfolio/hairfolli.jpg" class="img-fluid" alt="Hair Folli - Natural Hair Growth Products | Hair Growth Activator">
+            <div class="portfolio-info">
+              <h4>Hair Folli</h4>
+              <p>https://hairfolli.com/</p>
+              <a href="img/portfolio/hairfolli.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="https://hairfolli.com/" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-fashion">
+            <img src="img/portfolio/himalayan-naari.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Himalayan Naari Store</h4>
+              <p>https://himalayan-naari.com/</p>
+              <a href="img/portfolio/himalayan-naari.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Shopify Store"><i class="bx bx-plus"></i></a>
+              <a href="https://himalayan-naari.com/" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-cleaning">
+            <img src="img/portfolio/brighterscleaning.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Cleaning Services</h4>
+              <p>https://brighterscleaning.com/</p>
+              <a href="img/portfolio/brighterscleaning.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="https://brighterscleaning.com/" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-cleaning">
+            <img src="img/portfolio/angelcleaning.jpg" class="img-fluid" alt="Commercial Cleaning Company Services in Auckland and North Shore">
+            <div class="portfolio-info">
+              <h4>Cleaning Services</h4>
+              <p>https://angelcleaning.co.nz/</p>
+              <a href="img/portfolio/angelcleaning.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="https://angelcleaning.co.nz/" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-education">
+            <img src="img/portfolio/worldclasstuition.jpg" class="img-fluid" alt="Global Education Consultancy &amp; Professional Tutors">
+            <div class="portfolio-info">
+              <h4>World Class Tuition</h4>
+              <p>https://worldclasstuition.com/</p>
+              <a href="img/portfolio/worldclasstuition.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details-worldclasstuition.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-business">
+            <img src="img/portfolio/skates.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>https://www.skates.co.uk/</p>
+              <a href="img/portfolio/skates.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details-skates.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Klientboost</h4>
+              <p>Card</p>
+              <a href="img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details-klientboost.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>https://www.klientboost.com/</h4>
+              <p>Web</p>
+              <a href="img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Start Your Project?</h2>
-                <p class="cta-description">
-                    Let's create a website that drives results for your business. 
-                    Get your free consultation and project quote today.
-                </p>
-                <div class="cta-buttons">
-                    <a href="index.html#contact" class="btn btn-primary">Get Your Free Quote</a>
-                    <a href="tel:+917988618308" class="btn btn-secondary">Call +91-79886-18308</a>
-                </div>
+      </div>
+    </section><!-- End Portfolio Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>IWS</h3>
+              <p>
+                #490-491 Housing Board <br>
+                Ambala Cantt 133001, IN<br><br>
+                <strong>Phone:</strong> +91 79886 18308<br>
+                <strong>Email:</strong> contact@indexwebsolution.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://twitter.com/KamalKi20991503" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/Index-web-solution-104899815536339" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://img.youtube.com/vi/2PUryJGjNfo/hqdefault.jpg" class="youtube"><i class="bx bxl-youtube"></i></a>
+                <a href="https://img.youtube.com/vi/2PUryJGjNfo/hqdefault.jpg" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="https://www.linkedin.com/in/index-web-solution-10b10b238/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="terms-of-services.html">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="privacy-policy.html">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="services-web-design.html">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services-web-development.html">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services-product-management.html">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services-email-marketing.html">Email Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services-search-engine-optimization.html">Search Engine Optimization</a></li>
+	      <li><i class="bx bx-chevron-right"></i> <a href="services-conversion-strategies.html">Conversion Strategies</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to Our Newsletter for Services & Offers Just for You</p>
+            <form action="https://indexwebsolution.us1.list-manage.com/subscribe/post?u=c65fcfdff2e35a9e01f13f9dd&amp;id=b94b1575a3&amp;f_id=009387e5f0" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 class="footer-title">Index Web Solution</h3>
-                    <p class="footer-description">
-                        Expert web development, SEO, and digital marketing services 
-                        helping businesses succeed online since 2019.
-                    </p>
-                </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>IndexWebSolution</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="service-wordpress.html">WordPress Development</a></li>
-                        <li><a href="service-shopify.html">Shopify Stores</a></li>
-                        <li><a href="services-email-marketing.html">Email Marketing</a></li>
-                        <li><a href="services-search-engine-optimization.html">SEO Services</a></li>
-                    </ul>
-                </div>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
+  <!-- Vendor JS Files -->
+  <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Contact</h4>
-                    <p class="footer-description">
-                        #490-491 Housing Board<br>
-                        Ambala Cantt, IN 133001<br>
-                        <a href="tel:+917988618308">+91 79886 18308</a><br>
-                        <a href="mailto:contact@indexwebsolution.com">contact@indexwebsolution.com</a>
-                    </p>
-                </div>
-            </div>
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 Index Web Solution. All Rights Reserved.</p>
-                <div class="footer-legal">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-services.html">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68e50134edc04d1951a957f5/1j6v8pdgg';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
-    <script src="script.js"></script>
-    <script>
-        // Portfolio filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-full-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-
-                const filter = btn.getAttribute('data-filter');
-
-                portfolioItems.forEach(item => {
-                    if (filter === 'all') {
-                        item.classList.remove('hidden');
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        const categories = item.getAttribute('data-category').split(' ');
-                        if (categories.includes(filter)) {
-                            item.classList.remove('hidden');
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'scale(1)';
-                            }, 10);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.9)';
-                            setTimeout(() => {
-                                item.classList.add('hidden');
-                            }, 300);
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
+
 </html>

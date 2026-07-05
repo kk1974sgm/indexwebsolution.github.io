@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - Web Design & Development Projects | Index Web Solution</title>
+    <meta name="description" content="Browse our portfolio of successful WordPress, Shopify, and custom web development projects. See real results from our web design, SEO, and digital marketing work.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Portfolio-specific styles */
+        .portfolio-hero {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            border: 2px solid var(--light-gray);
+            background: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .portfolio-full-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .portfolio-full-item {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition-slow);
+        }
+
+        .portfolio-full-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-full-image {
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .portfolio-full-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .portfolio-full-item:hover .portfolio-full-image img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-full-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .overlay-link {
+            color: var(--white);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .portfolio-full-content {
+            padding: 28px;
+        }
+
+        .portfolio-full-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(26, 84, 144, 0.1);
+            color: var(--primary);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .portfolio-full-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .portfolio-full-description {
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-full-features {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--medium-gray);
+        }
+
+        .feature-icon {
+            width: 16px;
+            height: 16px;
+            color: var(--success);
+        }
+
+        .portfolio-full-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .portfolio-full-link:hover {
+            gap: 12px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Image placeholder for missing images */
+        .portfolio-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-full-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-filters {
+                gap: 12px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">Index Web Solution</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="tel:+917988618308" class="nav-cta">+91-79886-18308</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Work</span>
+                <h1 class="section-title">Portfolio</h1>
+                <p class="section-description">
+                    Explore our successful projects across industries. From e-commerce stores to service websites, 
+                    each project showcases our commitment to quality, performance, and results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filters -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="services">Services</button>
+                <button class="filter-btn" data-filter="beauty">Beauty & Wellness</button>
+                <button class="filter-btn" data-filter="travel">Travel & Hospitality</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-full-grid">
+                <!-- Project 1: Airtree Resort -->
+                <div class="portfolio-full-item" data-category="travel">
+                    <div class="portfolio-full-image">
+                        <img src="https://via.placeholder.com/800x500/1a5490/ffffff?text=Airtree+Resort" 
+                             alt="Airtree Resort Website" 
+                             onerror="this.src='https://via.placeholder.com/800x500/1a5490/ffffff?text=Airtree+Resort'">
+                        <div class="portfolio-overlay">
+                            <a href="https://airtreeresort.com.au/" target="_blank" class="overlay-link">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-full-content">
+                        <div class="portfolio-full-meta">
+                            <span class="portfolio-tag">Travel</span>
+                            <span class="portfolio-tag">WordPress</span>
+                        </div>
+                        <h3 class="portfolio-full-title">Airtree Resort</h3>
+                        <p class="portfolio-full-description">
+                            Luxury resort website with integrated booking system, image galleries, and mobile-responsive design. 
+                            Showcases resort amenities, rooms, and location with stunning visuals.
+                        </p>
+                        <div class="portfolio-full-features">
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Booking Integration
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Mobile Optimized
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                SEO Optimized
+                            </span>
+                        </div>
+                        <a href="https://airtreeresort.com.au/" target="_blank" class="portfolio-full-link">
+                            View Live Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Deltora Diamonds -->
+                <div class="portfolio-full-item" data-category="ecommerce">
+                    <div class="portfolio-full-image">
+                        <img src="https://via.placeholder.com/800x500/2c6bb3/ffffff?text=Deltora+Diamonds" 
+                             alt="Deltora Diamonds E-commerce"
+                             onerror="this.src='https://via.placeholder.com/800x500/2c6bb3/ffffff?text=Deltora+Diamonds'">
+                        <div class="portfolio-overlay">
+                            <a href="https://deltoradiamonds.com/" target="_blank" class="overlay-link">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-full-content">
+                        <div class="portfolio-full-meta">
+                            <span class="portfolio-tag">E-commerce</span>
+                            <span class="portfolio-tag">Shopify</span>
+                        </div>
+                        <h3 class="portfolio-full-title">Deltora Diamonds</h3>
+                        <p class="portfolio-full-description">
+                            Premium lab-grown diamond jewelry e-commerce store with custom product filters, 
+                            secure checkout, and elegant product showcases. Built for conversions and user experience.
+                        </p>
+                        <div class="portfolio-full-features">
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Product Filtering
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Payment Gateway
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Inventory Management
+                            </span>
+                        </div>
+                        <a href="https://deltoradiamonds.com/" target="_blank" class="portfolio-full-link">
+                            View Live Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Hair Folli -->
+                <div class="portfolio-full-item" data-category="beauty ecommerce">
+                    <div class="portfolio-full-image">
+                        <img src="https://via.placeholder.com/800x500/ff6b35/ffffff?text=Hair+Folli" 
+                             alt="Hair Folli E-commerce Website"
+                             onerror="this.src='https://via.placeholder.com/800x500/ff6b35/ffffff?text=Hair+Folli'">
+                        <div class="portfolio-overlay">
+                            <a href="https://hairfolli.com/" target="_blank" class="overlay-link">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-full-content">
+                        <div class="portfolio-full-meta">
+                            <span class="portfolio-tag">Beauty</span>
+                            <span class="portfolio-tag">E-commerce</span>
+                        </div>
+                        <h3 class="portfolio-full-title">Hair Folli</h3>
+                        <p class="portfolio-full-description">
+                            Natural hair growth products e-commerce site with educational content, product reviews, 
+                            and subscription options. Focused on building trust and converting health-conscious customers.
+                        </p>
+                        <div class="portfolio-full-features">
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Subscription System
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Blog Integration
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Email Marketing
+                            </span>
+                        </div>
+                        <a href="https://hairfolli.com/" target="_blank" class="portfolio-full-link">
+                            View Live Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Himalayan Naari -->
+                <div class="portfolio-full-item" data-category="ecommerce beauty">
+                    <div class="portfolio-full-image">
+                        <img src="https://via.placeholder.com/800x500/ffd23f/333333?text=Himalayan+Naari" 
+                             alt="Himalayan Naari Store"
+                             onerror="this.src='https://via.placeholder.com/800x500/ffd23f/333333?text=Himalayan+Naari'">
+                        <div class="portfolio-overlay">
+                            <a href="https://himalayan-naari.com/" target="_blank" class="overlay-link">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-full-content">
+                        <div class="portfolio-full-meta">
+                            <span class="portfolio-tag">Fashion</span>
+                            <span class="portfolio-tag">Shopify</span>
+                        </div>
+                        <h3 class="portfolio-full-title">Himalayan Naari Store</h3>
+                        <p class="portfolio-full-description">
+                            Traditional fashion e-commerce platform featuring handcrafted products, 
+                            cultural storytelling, and seamless shopping experience for ethnic wear enthusiasts.
+                        </p>
+                        <div class="portfolio-full-features">
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Multi-Currency
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Size Guides
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Product Reviews
+                            </span>
+                        </div>
+                        <a href="https://himalayan-naari.com/" target="_blank" class="portfolio-full-link">
+                            View Live Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Brighters Cleaning -->
+                <div class="portfolio-full-item" data-category="services">
+                    <div class="portfolio-full-image">
+                        <img src="https://via.placeholder.com/800x500/2ecc71/ffffff?text=Brighters+Cleaning" 
+                             alt="Brighters Cleaning Services"
+                             onerror="this.src='https://via.placeholder.com/800x500/2ecc71/ffffff?text=Brighters+Cleaning'">
+                        <div class="portfolio-overlay">
+                            <a href="https://brighterscleaning.com/" target="_blank" class="overlay-link">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-full-content">
+                        <div class="portfolio-full-meta">
+                            <span class="portfolio-tag">Services</span>
+                            <span class="portfolio-tag">WordPress</span>
+                        </div>
+                        <h3 class="portfolio-full-title">Brighters Cleaning</h3>
+                        <p class="portfolio-full-description">
+                            Professional cleaning services website with online booking, service area maps, 
+                            and customer testimonials. Designed to generate leads and showcase service quality.
+                        </p>
+                        <div class="portfolio-full-features">
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Online Booking
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Quote Calculator
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Local SEO
+                            </span>
+                        </div>
+                        <a href="https://brighterscleaning.com/" target="_blank" class="portfolio-full-link">
+                            View Live Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6: Angel Cleaning -->
+                <div class="portfolio-full-item" data-category="services">
+                    <div class="portfolio-full-image">
+                        <img src="https://via.placeholder.com/800x500/3498db/ffffff?text=Angel+Cleaning" 
+                             alt="Angel Cleaning NZ"
+                             onerror="this.src='https://via.placeholder.com/800x500/3498db/ffffff?text=Angel+Cleaning'">
+                        <div class="portfolio-overlay">
+                            <a href="https://angelcleaning.co.nz/" target="_blank" class="overlay-link">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-full-content">
+                        <div class="portfolio-full-meta">
+                            <span class="portfolio-tag">Services</span>
+                            <span class="portfolio-tag">WordPress</span>
+                        </div>
+                        <h3 class="portfolio-full-title">Angel Cleaning NZ</h3>
+                        <p class="portfolio-full-description">
+                            Commercial cleaning company website for Auckland and North Shore with service packages, 
+                            instant quotes, and lead generation forms optimized for B2B clients.
+                        </p>
+                        <div class="portfolio-full-features">
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                B2B Focused
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Quote Forms
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Service Areas
+                            </span>
+                        </div>
+                        <a href="https://angelcleaning.co.nz/" target="_blank" class="portfolio-full-link">
+                            View Live Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 7: World Class Tuition -->
+                <div class="portfolio-full-item" data-category="education services">
+                    <div class="portfolio-full-image">
+                        <img src="https://via.placeholder.com/800x500/9b59b6/ffffff?text=World+Class+Tuition" 
+                             alt="World Class Tuition"
+                             onerror="this.src='https://via.placeholder.com/800x500/9b59b6/ffffff?text=World+Class+Tuition'">
+                        <div class="portfolio-overlay">
+                            <a href="https://worldclasstuition.com/" target="_blank" class="overlay-link">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-full-content">
+                        <div class="portfolio-full-meta">
+                            <span class="portfolio-tag">Education</span>
+                            <span class="portfolio-tag">WordPress</span>
+                        </div>
+                        <h3 class="portfolio-full-title">World Class Tuition</h3>
+                        <p class="portfolio-full-description">
+                            Global education consultancy and tutoring platform with course catalogs, 
+                            tutor profiles, scheduling system, and student resources for international education.
+                        </p>
+                        <div class="portfolio-full-features">
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Course Catalog
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Booking System
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Student Portal
+                            </span>
+                        </div>
+                        <a href="https://worldclasstuition.com/" target="_blank" class="portfolio-full-link">
+                            View Live Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 8: Legacy Clinic -->
+                <div class="portfolio-full-item" data-category="services">
+                    <div class="portfolio-full-image">
+                        <img src="https://via.placeholder.com/800x500/e74c3c/ffffff?text=Legacy+Clinic" 
+                             alt="Legacy Clinic of Chiropractic"
+                             onerror="this.src='https://via.placeholder.com/800x500/e74c3c/ffffff?text=Legacy+Clinic'">
+                        <div class="portfolio-overlay">
+                            <a href="https://legacyclinicofchiropractic.com/" target="_blank" class="overlay-link">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-full-content">
+                        <div class="portfolio-full-meta">
+                            <span class="portfolio-tag">Healthcare</span>
+                            <span class="portfolio-tag">WordPress</span>
+                        </div>
+                        <h3 class="portfolio-full-title">Legacy Clinic of Chiropractic</h3>
+                        <p class="portfolio-full-description">
+                            Professional chiropractic clinic website with appointment scheduling, service descriptions, 
+                            patient education resources, and integrated social media management.
+                        </p>
+                        <div class="portfolio-full-features">
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Appointments
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Patient Resources
+                            </span>
+                            <span class="feature-badge">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Social Integration
+                            </span>
+                        </div>
+                        <a href="https://legacyclinicofchiropractic.com/" target="_blank" class="portfolio-full-link">
+                            View Live Site →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Project?</h2>
+                <p class="cta-description">
+                    Let's create a website that drives results for your business. 
+                    Get your free consultation and project quote today.
+                </p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn btn-primary">Get Your Free Quote</a>
+                    <a href="tel:+917988618308" class="btn btn-secondary">Call +91-79886-18308</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Index Web Solution</h3>
+                    <p class="footer-description">
+                        Expert web development, SEO, and digital marketing services 
+                        helping businesses succeed online since 2019.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-wordpress.html">WordPress Development</a></li>
+                        <li><a href="service-shopify.html">Shopify Stores</a></li>
+                        <li><a href="services-email-marketing.html">Email Marketing</a></li>
+                        <li><a href="services-search-engine-optimization.html">SEO Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-description">
+                        #490-491 Housing Board<br>
+                        Ambala Cantt, IN 133001<br>
+                        <a href="tel:+917988618308">+91 79886 18308</a><br>
+                        <a href="mailto:contact@indexwebsolution.com">contact@indexwebsolution.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Index Web Solution. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-services.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Portfolio filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-full-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        if (categories.includes(filter)) {
+                            item.classList.remove('hidden');
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.9)';
+                            setTimeout(() => {
+                                item.classList.add('hidden');
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
