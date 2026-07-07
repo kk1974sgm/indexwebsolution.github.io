@@ -50,9 +50,27 @@
   ======================================================== -->
 <meta name="google-site-verification" content="YwHQGVY9x5UtRxHBABTak0WdN260vrTv9O0boYdwqQU" />
 <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c65fcfdff2e35a9e01f13f9dd/bb55b18a1bbde6286ac1f96ba.js");</script>
+
+<style>
+
+#rippleCanvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:9999;
+}
+
+</style>
 </head>
 
 <body>
+
+
+  <!-- This is lightweight, works on GitHub Pages, and can be added directly to your index.html. -->
+  <canvas id="rippleCanvas"></canvas>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
@@ -739,17 +757,110 @@
   })();
   </script>
   <!--End of Tawk.to Script-->
-<!--
-  <script>
-  tawkMessengerAPI.onPrechatSubmit = function(data){
-  fetch("https://indexwebsolution.app.n8n.cloud/webhook/https://indexwebsolution.app.n8n.cloud/webhook-test/3a571631-14e2-490a-9659-bc934592f385", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
-};
+<script>
+
+const canvas = document.getElementById("rippleCanvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+const ripples = [];
+
+class Ripple{
+
+    constructor(x,y){
+
+        this.x = x;
+        this.y = y;
+
+        this.radius = 2;
+
+        this.alpha = 0.6;
+
+        this.speed = 1.5 + Math.random()*1.5;
+
+        this.lineWidth = 2;
+
+    }
+
+    update(){
+
+        this.radius += this.speed;
+
+        this.alpha -= 0.008;
+
+    }
+
+    draw(){
+
+    for(let i=0;i<3;i++){
+
+        ctx.beginPath();
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.radius + i*8,
+            0,
+            Math.PI*2
+        );
+
+        ctx.strokeStyle =
+        "rgba(255,255,255," + (this.alpha - i*0.15) + ")";
+
+        ctx.lineWidth = 1.2;
+
+        ctx.stroke();
+
+    }
+
+}
+
+}
+
+function createRipple(){
+
+    const x = Math.random()*canvas.width;
+
+    const y = Math.random()*canvas.height;
+
+    ripples.push(new Ripple(x,y));
+
+}
+
+setInterval(createRipple,250);
+
+function animate(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    for(let i=ripples.length-1;i>=0;i--){
+
+        ripples[i].update();
+
+        ripples[i].draw();
+
+        if(ripples[i].alpha<=0){
+
+            ripples.splice(i,1);
+
+        }
+
+    }
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
+
 </script>
--->
 
 </body>
 
