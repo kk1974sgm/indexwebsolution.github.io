@@ -26,484 +26,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Schema Markup for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "15 Essential WordPress Plugins Every Website Needs in 2026",
-      "description": "Discover the must-have WordPress plugins for 2026. Expert recommendations for performance, security, SEO, and user experience.",
-      "image": "https://indexwebsolution.com/img/blog/wordpress-plugins-2026.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "Index Web Solution"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Index Web Solution",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://indexwebsolution.com/img/logo.png"
-        }
-      },
-      "datePublished": "2026-02-05",
-      "dateModified": "2026-02-05"
-    }
-    </script>
-    
-    <style>
-        .blog-post-hero {
-            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
-            padding: 140px 0 60px;
-        }
+  <!-- Favicons -->
+  <link href="../img/favicon.png" rel="icon">
+  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        .blog-post-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-        .blog-breadcrumb {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            margin-bottom: 24px;
-            font-size: 14px;
-            color: var(--medium-gray);
-        }
+  <!-- Vendor CSS Files -->
+  <link href="../vendor/aos/aos.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-        .blog-breadcrumb a {
-            color: var(--primary);
-        }
-
-        .blog-post-meta {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 24px;
-            font-size: 14px;
-            color: var(--medium-gray);
-        }
-
-        .blog-category-badge {
-            background: var(--primary);
-            color: var(--white);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-        }
-
-        .blog-post-title {
-            font-family: var(--font-display);
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--dark);
-            margin-bottom: 24px;
-        }
-
-        .blog-post-excerpt {
-            font-size: 20px;
-            color: var(--medium-gray);
-            line-height: 1.7;
-            margin-bottom: 40px;
-        }
-
-        .blog-post-image {
-            width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 60px;
-        }
-
-        .blog-post-image img {
-            width: 100%;
-            height: auto;
-        }
-
-        .blog-post-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
-
-        /* Table of Contents */
-        .toc {
-            background: var(--light-gray);
-            padding: 32px;
-            border-radius: 12px;
-            margin-bottom: 48px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .toc-title {
-            font-family: var(--font-display);
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .toc-list {
-            list-style: none;
-        }
-
-        .toc-list li {
-            margin-bottom: 12px;
-        }
-
-        .toc-list a {
-            color: var(--dark);
-            transition: var(--transition);
-            display: block;
-            padding: 8px 0;
-        }
-
-        .toc-list a:hover {
-            color: var(--primary);
-            padding-left: 8px;
-        }
-
-        /* Content Styles */
-        .blog-post-content h2 {
-            font-family: var(--font-display);
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--dark);
-            margin: 48px 0 24px;
-            scroll-margin-top: 100px;
-        }
-
-        .blog-post-content h3 {
-            font-family: var(--font-display);
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--dark);
-            margin: 36px 0 16px;
-            scroll-margin-top: 100px;
-        }
-
-        .blog-post-content p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: var(--dark);
-            margin-bottom: 24px;
-        }
-
-        .blog-post-content ul,
-        .blog-post-content ol {
-            margin-bottom: 24px;
-            padding-left: 32px;
-        }
-
-        .blog-post-content li {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 12px;
-            color: var(--dark);
-        }
-
-        .blog-post-content strong {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .blog-post-content a {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: underline;
-        }
-
-        .blog-post-content a:hover {
-            color: var(--primary-dark);
-        }
-
-        /* Affiliate Product Box */
-        .affiliate-box {
-            background: linear-gradient(135deg, #fff9e6 0%, #fff4d1 100%);
-            border: 2px solid var(--accent);
-            border-radius: 16px;
-            padding: 32px;
-            margin: 40px 0;
-            position: relative;
-        }
-
-        .affiliate-badge {
-            position: absolute;
-            top: -12px;
-            left: 24px;
-            background: var(--accent);
-            color: var(--dark);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .affiliate-content {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .affiliate-image {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .affiliate-image img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .affiliate-details h3 {
-            font-family: var(--font-display);
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--dark);
-        }
-
-        .affiliate-price {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .affiliate-features {
-            list-style: none;
-            padding: 0;
-            margin: 16px 0;
-        }
-
-        .affiliate-features li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-            font-size: 16px;
-        }
-
-        .affiliate-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .affiliate-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--primary);
-            color: var(--white);
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-top: 16px;
-            transition: var(--transition);
-        }
-
-        .affiliate-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(26, 84, 144, 0.3);
-            text-decoration: none;
-        }
-
-        .affiliate-disclaimer {
-            font-size: 13px;
-            color: var(--medium-gray);
-            margin-top: 16px;
-            font-style: italic;
-        }
-
-        /* Info Box */
-        .info-box {
-            background: rgba(26, 84, 144, 0.05);
-            border-left: 4px solid var(--primary);
-            padding: 24px;
-            border-radius: 8px;
-            margin: 32px 0;
-        }
-
-        .info-box-title {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Warning Box */
-        .warning-box {
-            background: rgba(255, 107, 53, 0.05);
-            border-left: 4px solid var(--secondary);
-            padding: 24px;
-            border-radius: 8px;
-            margin: 32px 0;
-        }
-
-        .warning-box-title {
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 12px;
-        }
-
-        /* Key Takeaway Box */
-        .takeaway-box {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 40px;
-            border-radius: 16px;
-            margin: 48px 0;
-        }
-
-        .takeaway-box h3 {
-            color: var(--white);
-            margin-top: 0;
-        }
-
-        .takeaway-box ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .takeaway-box li {
-            padding: 12px 0;
-            padding-left: 32px;
-            position: relative;
-            color: var(--white);
-        }
-
-        .takeaway-box li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            font-weight: 700;
-        }
-
-        /* Related Posts */
-        .related-posts {
-            margin-top: 80px;
-            padding-top: 60px;
-            border-top: 2px solid var(--light-gray);
-        }
-
-        .related-posts-title {
-            font-family: var(--font-display);
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-        }
-
-        .related-card {
-            background: var(--white);
-            border: 2px solid var(--light-gray);
-            border-radius: 12px;
-            padding: 24px;
-            transition: var(--transition);
-        }
-
-        .related-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-        }
-
-        .related-card-title {
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: var(--dark);
-        }
-
-        .related-card-excerpt {
-            color: var(--medium-gray);
-            font-size: 14px;
-            margin-bottom: 16px;
-        }
-
-        .related-card-link {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        /* Author Box */
-        .author-box {
-            background: var(--light-gray);
-            padding: 32px;
-            border-radius: 16px;
-            margin: 60px 0;
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .author-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .author-info h4 {
-            font-family: var(--font-display);
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .author-bio {
-            color: var(--medium-gray);
-            line-height: 1.7;
-        }
-
-        @media (max-width: 768px) {
-            .blog-post-title {
-                font-size: 32px;
-            }
-
-            .blog-post-content h2 {
-                font-size: 24px;
-            }
-
-            .affiliate-content {
-                grid-template-columns: 1fr;
-            }
-
-            .author-box {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+  <!-- Template Main CSS File -->
+  <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-  <!-- This is lightweight, works on GitHub Pages, and can be added directly to your index.html. -->
-  <canvas id="rippleCanvas"></canvas>
 <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
@@ -609,40 +151,31 @@
 
     </div>
   </header><!-- End Header -->
-  
-    <section class="blog-post-hero">
-        <div class="blog-post-container">
-            <nav class="blog-breadcrumb">
-                <a href="index.html">Home</a>
-                <span>›</span>
-                <a href="blog.html">Blog</a>
-                <span>›</span>
-                <span>WordPress Plugins</span>
-            </nav>
 
-            <div class="blog-post-meta">
-                <span class="blog-category-badge">WordPress</span>
-                <span>February 5, 2026</span>
-                <span>•</span>
-                <span>15 min read</span>
-            </div>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero-inner-page">
+    <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+      <h1>15 Essential WordPress Plugins </br>Every Website Needs in 2026</h1>
+      <div class="d-flex">
+        <a href="contact.html" class="btn-get-started scrollto">Get a Free Consultation</a>
+        <a href="https://youtu.be/KzcLbyULJ5M?si=DWQT_LoEpxRvYW5m" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+<main id="main">
 
-            <h1 class="blog-post-title">15 Essential WordPress Plugins Every Website Needs in 2026</h1>
+  <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
             
             <p class="blog-post-excerpt">
                 Discover the must-have WordPress plugins that will supercharge your website's performance, 
                 security, SEO, and user experience. Complete with setup guides, pricing, and expert recommendations.
             </p>
-        </div>
-    </section>
 
-    <div class="blog-post-image">
-        <img src="https://via.placeholder.com/1200x600/1a5490/ffffff?text=WordPress+Plugins+2026" alt="Essential WordPress Plugins for 2026">
-    </div>
 
     <!-- Blog Post Content -->
-    <article class="blog-post-content">
-        <!-- Table of Contents -->
+   
         <div class="toc">
             <h4 class="toc-title">📋 Table of Contents</h4>
             <ol class="toc-list">
@@ -944,125 +477,103 @@
             with tools like GTmetrix or Google PageSpeed Insights. If a plugin slows your site significantly, 
             look for a lighter alternative.
         </p>
+      </div>
+    </div>
+      </section><!-- End Services Section -->
+  
+    </main>
 
-        <div class="info-box">
-            <div class="info-box-title">
-                💼 Need Help Setting Up Your WordPress Site?
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>IWS</h3>
+              <p>
+                #490-491 Housing Board <br>
+                Ambala Cantt 133001, IN<br><br>
+                <strong>Phone:</strong> +91 79886 18308<br>
+                <strong>Email:</strong> contact@indexwebsolution.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://twitter.com/KamalKi20991503" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/Index-web-solution-104899815536339" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://img.youtube.com/vi/2PUryJGjNfo/hqdefault.jpg" class="youtube"><i class="bx bxl-youtube"></i></a>
+                <a href="https://img.youtube.com/vi/2PUryJGjNfo/hqdefault.jpg" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="https://www.linkedin.com/in/index-web-solution-10b10b238/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
             </div>
-            <p style="margin: 0;">
-                At Index Web Solution, we specialize in WordPress development, optimization, and maintenance. 
-                We can help you choose and configure the right plugins for your specific needs. 
-                <a href="index.html#contact">Get a free consultation →</a>
-            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../about.html">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../services.html">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../terms-of-services.html">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../privacy-policy.html">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="web-design.html">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="web-development.html">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="product-management.html">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="email-marketing.html">Email Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="search-engine-optimization.html">Search Engine Optimization</a></li>
+	            <li><i class="bx bx-chevron-right"></i> <a href="conversion-strategies.html">Conversion Strategies</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to Our Newsletter for Services & Offers Just for You</p>
+            <form action="https://indexwebsolution.us1.list-manage.com/subscribe/post?u=c65fcfdff2e35a9e01f13f9dd&amp;id=b94b1575a3&amp;f_id=009387e5f0" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
         </div>
+      </div>
+    </div>
 
-        <!-- Author Box -->
-        <div class="author-box">
-            <div class="author-avatar">IWS</div>
-            <div class="author-info">
-                <h4>Index Web Solution Team</h4>
-                <p class="author-bio">
-                    Our team has built and optimized hundreds of WordPress websites since 2019. We specialize 
-                    in creating fast, secure, and SEO-friendly websites for businesses across India and globally.
-                </p>
-            </div>
-        </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>IndexWebSolution</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
-        <!-- Related Posts -->
-        <div class="related-posts">
-            <h2 class="related-posts-title">Related Articles</h2>
-            <div class="related-grid">
-                <a href="blog-post-wordpress-speed.html" class="related-card">
-                    <h3 class="related-card-title">WordPress Speed Optimization: Complete Guide</h3>
-                    <p class="related-card-excerpt">
-                        Learn how to make your WordPress site load in under 2 seconds with our comprehensive guide.
-                    </p>
-                    <span class="related-card-link">Read More →</span>
-                </a>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-                <a href="blog-post-wordpress-security.html" class="related-card">
-                    <h3 class="related-card-title">WordPress Security Checklist for 2026</h3>
-                    <p class="related-card-excerpt">
-                        Protect your WordPress site from hackers with these essential security measures.
-                    </p>
-                    <span class="related-card-link">Read More →</span>
-                </a>
+  <!-- Vendor JS Files -->
+  <script src="../vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../vendor/aos/aos.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../vendor/php-email-form/validate.js"></script>
 
-                <a href="blog-post-wordpress-seo.html" class="related-card">
-                    <h3 class="related-card-title">WordPress SEO: Beginner's Guide</h3>
-                    <p class="related-card-excerpt">
-                        Step-by-step guide to optimizing your WordPress site for search engines.
-                    </p>
-                    <span class="related-card-link">Read More →</span>
-                </a>
-            </div>
-        </div>
-    </article>
+  <!-- Template Main JS File -->
+  <script src="../js/main.js"></script>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Need Professional WordPress Development?</h2>
-                <p class="cta-description">
-                    Let our experts build, optimize, and maintain your WordPress website. 
-                    Get a fast, secure, and SEO-friendly site that drives results.
-                </p>
-                <div class="cta-buttons">
-                    <a href="index.html#contact" class="btn btn-primary">Get Free Consultation</a>
-                    <a href="tel:+917988618308" class="btn btn-secondary">Call +91-79886-18308</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 class="footer-title">Index Web Solution</h3>
-                    <p class="footer-description">
-                        Expert web development, SEO, and digital marketing services 
-                        helping businesses succeed online since 2019.
-                    </p>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-heading">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="service-wordpress.html">WordPress Development</a></li>
-                        <li><a href="service-shopify.html">Shopify Stores</a></li>
-                        <li><a href="services-email-marketing.html">Email Marketing</a></li>
-                        <li><a href="services-search-engine-optimization.html">SEO Services</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-heading">Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-heading">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-services.html">Terms of Service</a></li>
-                        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Index Web Solution. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
