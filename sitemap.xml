@@ -1,115 +1,233 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://indexwebsolution.com/</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://indexwebsolution.com/</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/index.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/about.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/about.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/services.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/wordpress-development.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/portfolio.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/shopify-development.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/team.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/wix-development.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/blog.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/squarespace-development.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/contact.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/thinkific-development.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/services-web-design.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/wordpress-developer-for-law-firm.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/services-web-development.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/wordpress-developer-for-small-businesses.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/services-product-management.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/shopify-store-setup.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/services-email-marketing.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/woocommerce-development.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/services-search-engine-optimization.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/shopify-store-management.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/services-conversion-strategies.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/shopify-website-developer.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/portfolio-details.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/brevo-email-marketing.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/terms-of-services.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://indexwebsolution.com/services/performance-marketing.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/service-wordpress.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://indexwebsolution.com/services/gohighlevel.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/service-shopify.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://indexwebsolution.com/services/hubspot-crm.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/privacy-policy.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://indexwebsolution.com/services/emotional-gifting-funnel.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/portfolio-details-wordpress-01.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://indexwebsolution.com/services/search-engine-optimization.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://indexwebsolution.com/portfolio-details-shopify-01.html</loc>
-  <lastmod>2024-05-18T15:32:24+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://indexwebsolution.com/services/website-support.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
-
-
+<url>
+	<loc>https://indexwebsolution.com/services/website-migration-expert.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/portfolio.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/team.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/contact.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/services/shopify.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/portfolio-details-airtreeresort.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/portfolio-details-worldclasstuition.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/portfolio-details-skates.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/portfolio-details-klientboost.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/terms-of-services.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/privacy-policy.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/services/web-design.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/services/web-development.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/services/email-marketing-solutions.html</loc>
+	<lastmod>2026-08-04T13:29:14+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/services/conversion-strategies.html</loc>
+	<lastmod>2026-08-04T13:29:17+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/5-Free-AI-Tools-Every-Student-Should-Learn-in-2026.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/how-to-learn-ai-and-become-an-ai-expert.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/india-japan-artificial-intelligence-partnership.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/complete-shopify-seo-guide.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/email-marketing-automation.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/local-seo-checklist.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/wordpress-speed-optimization.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/10-best-seo-tools-for-small-businesses.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://indexwebsolution.com/blog-posts/top-12-shopify-apps-to-increase-conversions-and-sales.html</loc>
+	<lastmod>2026-08-04T13:29:27+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
 </urlset>
