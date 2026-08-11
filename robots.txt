@@ -4,3 +4,4 @@ Disallow: /thank-you
 Disallow: /inner-page
 Disallow: /goodbye
 sitemap: https://indexwebsolution.com/sitemap.xml
+Allow: /ads.txt
